@@ -1,7 +1,11 @@
-library(modeest)
+getmode<-function(v) {
+  uniqv<-unique(v)
+  uniqv[which.max(tabulate(match(v, uniqv)))]
+}
 
 myData = read.csv("CardioGoodFitness.csv",
                   stringsAsFactors=F)
 
-mode = mfv(myData$Age)
-print(mode)
+age = myData$Age
+result <- getmode(get)
+print(result)
